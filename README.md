@@ -38,8 +38,8 @@ A modern, responsive website built with Gatsby, TypeScript, and Tailwind CSS for
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd photo-plus
+git clone git@github.com:ChamikaSathsara/photo-plus-website.git
+cd photo-plus-website
 ```
 
 2. Install dependencies:
