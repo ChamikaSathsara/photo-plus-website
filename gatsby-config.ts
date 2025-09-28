@@ -2,33 +2,83 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `PhotoPlus`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `PhotoPlus - Leading Batch Photo Company in Sri Lanka`,
+    description: `Professional batch photography services for universities in Sri Lanka. Specializing in graduation photos, event photography, drone shots, and custom photo frames.`,
+    author: `PhotoPlus`,
+    siteUrl: `https://photoplus.lk`,
+    keywords: `batch photography, university photos, graduation photos, Sri Lanka, event photography, drone shots`,
+    image: `/og-image.jpg`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-google-gtag", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-mdx", "gatsby-transformer-remark", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt",
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'PhotoPlus',
+        short_name: 'PhotoPlus',
+        start_url: '/',
+        background_color: '#000000',
+        theme_color: '#000000',
+        display: 'minimal-ui',
+        icon: "src/images/icon.png",
+        icons: [
+          {
+            src: "src/images/icon.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "src/images/icon.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
+      }
     },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'Raleway:300,400,500,600,700,800,900',
+        ],
+        display: 'swap',
+      }
     },
-    __key: "pages"
-  }]
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "images",
+        "path": "./src/images/"
+      },
+      __key: "images"
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "pages",
+        "path": "./src/pages/"
+      },
+      __key: "pages"
+    },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [
+          "GA_TRACKING_ID", // Replace with your Google Analytics tracking ID
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
+  ]
 };
 
 export default config;
