@@ -219,7 +219,7 @@ const AboutPage: React.FC<PageProps> = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: 'Chamika Pathirage',
+                  name: 'Dulshan Sanjeewa',
                   role: 'Lead Photographer & Founder',
                   description: 'With over 10 years of experience in professional photography, Chamika leads our team with passion and expertise.',
                   image: '👨‍💼'
